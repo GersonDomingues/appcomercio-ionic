@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+
+.scroll{
+  max-height: 110px;
+  border: 1px solid #ddd;
+  display: flex;
+  overflow-x: scroll;
+}
+
+.scroll::-webkit-scrollbar{
+  width: 0;
+}
+
+.scroll .item{
+  min-width: 80px;
+  height: 80px;
+  line-height: 80px;
+  text-align: right;
+  background-color: #ddd;
+  margin-right: 1px;
+}
