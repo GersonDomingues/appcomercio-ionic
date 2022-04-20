@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoriaDTO } from '../model/categoria-dto';
-import { CategoriaService } from '../service/categoria.service';
+import { CategoriaDTO } from '../../models/categoria-dto';
+import { CategoriaService } from '../../service/domain/categoria.service';
 
 @Component({
   selector: 'app-home',
@@ -15,10 +15,14 @@ export class HomePage implements OnInit{
   ngOnInit() {
     this.categoriaService.findAll()
     .subscribe(response => {
+      console.log(response);
       this.categorias = response;
+      
 
     },
-    error => {});
+    error => {
+      console.log(error);
+    });
 
   }
 

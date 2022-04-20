@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HttpClientModule } from '@angular/common/http';
-import { CategoriaService } from './service/categoria.service';
+import { CategoriaService } from '../service/domain/categoria.service';
 
 
 
