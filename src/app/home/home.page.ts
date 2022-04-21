@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController, NavParams } from '@ionic/angular';
 import { CategoriaDTO } from '../../models/categoria-dto';
 import { CategoriaService } from '../../service/domain/categoria.service';
 
@@ -10,12 +11,13 @@ import { CategoriaService } from '../../service/domain/categoria.service';
 export class HomePage implements OnInit{
   categorias: CategoriaDTO[];
 
-  constructor(public categoriaService: CategoriaService) {}
+  constructor(
+    public navCtrl: NavController, public navParams: NavParams,
+    public categoriaService: CategoriaService) {}
 
   ngOnInit() {
     this.categoriaService.findAll()
     .subscribe(response => {
-      console.log(response);
       this.categorias = response;
       
 
@@ -26,4 +28,7 @@ export class HomePage implements OnInit{
 
   }
 
+  showProdutos(){
+    this.navCtrl.navigateForward('pratodia');
+  }
 }

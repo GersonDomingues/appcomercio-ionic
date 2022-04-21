@@ -10,13 +10,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriaService } from '../service/domain/categoria.service';
 
+import { NavController, NavParams } from '@ionic/angular';
+
 
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CategoriaService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CategoriaService, NavController, NavParams],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
