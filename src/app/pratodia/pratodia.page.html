@@ -1,9 +1,22 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>pratodia</ion-title>
+    <ion-title></ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-virtual-scroll [items]="items" approxItemHeight="320px">
+    <ion-card  button *ngFor="let item of items" (click)="showDetail(item.id)">
+      
+    
+      <ion-thumbnail item-start>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-thumbnail>
+    <ion-card-header>
+      <ion-card-title>{{item.nome}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>{{item.preco| currency}}</ion-card-content>
+    </ion-card>
+  </ion-virtual-scroll>
 </ion-content>

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CategoriaService } from '../service/domain/categoria.service';
 
 import { NavController, NavParams } from '@ionic/angular';
+import { ProdutoService } from 'src/service/domain/produto.service';
 
 
 
@@ -18,7 +19,7 @@ import { NavController, NavParams } from '@ionic/angular';
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CategoriaService, NavController, NavParams],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, CategoriaService, ProdutoService, NavController, NavParams],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

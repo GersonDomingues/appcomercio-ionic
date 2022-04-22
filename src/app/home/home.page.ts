@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavController, NavParams } from '@ionic/angular';
 import { CategoriaDTO } from '../../models/categoria-dto';
 import { CategoriaService } from '../../service/domain/categoria.service';
@@ -13,7 +14,8 @@ export class HomePage implements OnInit{
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
-    public categoriaService: CategoriaService) {}
+    public categoriaService: CategoriaService,
+    private router: Router) {}
 
   ngOnInit() {
     this.categoriaService.findAll()
@@ -28,7 +30,9 @@ export class HomePage implements OnInit{
 
   }
 
-  showProdutos(){
-    this.navCtrl.navigateForward('pratodia');
+  
+  showProdutos(categoria_id : string) {
+    let data = JSON.stringify(categoria_id);
+    this.router.navigate(['pratodia', {data}]);
   }
 }
