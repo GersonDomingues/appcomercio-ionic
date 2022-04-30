@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Produto Detalhes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+ 
+  <ion-card>
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" class="ion-activated">
+    <ion-card-content>
+      <ion-card-title>
+        {{item?.nome}}
+        </ion-card-title>
+        <p>
+         {{item?.descricao}}
+        </p>
+        <p>{{item?.preco}}&nbsp;€</p>
+    </ion-card-content>
+  </ion-card>
+
+  
+</ion-content>

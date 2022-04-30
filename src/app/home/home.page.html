@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      PIZZERIA LISBOA
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -12,11 +12,11 @@
         <ion-row>
           <ion-col >
             <ion-item >
-              <ion-button class="item"  *ngFor="let categoria of categorias" (click)="showProdutos(categoria.id, categoria.nome)">
+              <ion-button class="item"  *ngFor="let item of items" (click)="showProdutos(item.id, item.nome)">
                 <ion-thumbnail item-start>
                   <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
                 </ion-thumbnail>
-                <p> {{ categoria.nome }} </p>
+                <p> {{ item.nome }} </p>
               </ion-button>
             </ion-item>
           </ion-col>

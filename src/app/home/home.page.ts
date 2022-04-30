@@ -10,7 +10,7 @@ import { CategoriaService } from '../../service/domain/categoria.service';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit{
-  categorias: CategoriaDTO[];
+  items: CategoriaDTO[];
 
   constructor(
     public navCtrl: NavController, public navParams: NavParams,
@@ -20,7 +20,7 @@ export class HomePage implements OnInit{
   ngOnInit() {
     this.categoriaService.findAll()
     .subscribe(response => {
-      this.categorias = response;
+      this.items = response;
       
 
     },
@@ -33,6 +33,27 @@ export class HomePage implements OnInit{
   
   showProdutos(categoria_id : string) {
     let data = JSON.stringify(categoria_id);
-    this.router.navigate(['pratodia', {data}]);
+    
+    switch (data) {
+      case '1':
+        this.router.navigate(['pratodia', {data}]);
+        break;
+      case '2':
+        this.router.navigate(['pratoentrada', {data}]);
+      break;
+      case '3':
+        this.router.navigate(['pratorefeicao', {data}]);
+      break;
+      case '4':
+        this.router.navigate(['sobremesa', {data}]);
+      break;
+      case '5':
+        this.router.navigate(['lanche', {data}]);
+      break;
+      case '6':
+        this.router.navigate(['bebida', {data}]);
+      break;
+      default:
+    }   
+  } 
   }
-}
